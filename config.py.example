@@ -52,6 +52,17 @@ password = 'drowssap'
 interval = 1
 
 #
+# verbose - Print everything that is being logged.
+#
+#   If verbose is set to False uNotify won't print anything to the
+#   terminal.
+#
+#   The default value is True.
+#
+
+verbose = True
+
+#
 #-#-#-#-#-#-#-#-#-#-#-#-#      COMMANDS      #-#-#-#-#-#-#-#-#-#-#-#-#
 #                                                                    #
 # matchers - A list of matchers containing a list of commands
