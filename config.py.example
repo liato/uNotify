@@ -27,7 +27,7 @@ host = 'localhost'
 port = 5112
 
 #
-# username - The sama username as the one specified in the
+# username - The same username as the one specified in the
 #            µTorrent Web UI settings.
 #
 
