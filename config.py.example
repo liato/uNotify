@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+#                       _   _       _   _  __                        #
+#                      | \ | |     | | (_)/ _|                       #
+#                 _   _|  \| | ___ | |_ _| |_ _   _                  #
+#                | | | | . ` |/ _ \| __| |  _| | | |                 #
+#                | |_| | |\  | (_) | |_| | | | |_| |                 #
+#                 \__,_|_| \_|\___/ \__|_|_|  \__, |                 #
+#                                              __/ |                 #
+#                                             |___/                  #
+#                                                                    #
+#-#-#-#-#-#-#-#-#-#-#-#-#      GENERAL       #-#-#-#-#-#-#-#-#-#-#-#-#
+#                                                                    #
+# host - The host to connect to.
+#
+#    If you're running both µTorrent and uNotify locally the host
+#    should be set to 'localhost.
+#
+#    The default host is 'localhost'.
+#
+
+host = 'localhost'
+
+#
+# port - The port on which the µTorrent Web UI is listening.
+#
+
+port = 5112
+
+#
+# username - The sama username as the one specified in the
+#            µTorrent Web UI settings.
+#
+
+username = 'root'
+
+#
+# password - The same password as the one specified in the
+#            µTorrent Web UI settings.
+#
+
+password = 'drowssap'
+
+#
+# interval - Update interval given in minutes.
+#
+#   uNotify will wait <interval> minutes before checking for complete
+#   torrents again.
+#
+#   The default update interval is 1 minute.
+#
+
+interval = 1
+
+#
+#-#-#-#-#-#-#-#-#-#-#-#-#      COMMANDS      #-#-#-#-#-#-#-#-#-#-#-#-#
+#                                                                    #
+# matchers - A list of matchers containing a list of commands
+#            to execute when the matcher matches a torrent.
+#
+#   The matchers are case insensitive regular expressions.
+#   If '$torrent' is found in a command it'll be replaced with the
+#   name of the torrent.
+#   Besides '$torrent' the following words will be replaced with the relevant
+#   information:
+#
+#            $id         - The torrents hash id
+#            $status     - Status of the download
+#            $name       - Name of the torrent, same as $torrent
+#            $size       - The size given in bytes
+#            $downloaded - Amount of bytes downloaded
+#            $uploaded   - Amount of bytes uploaded
+#            $label      - The torrent label
+#
+
+matchers = [
+            #Send an email and unpack the episode when a new episode of
+            #lost has been downloaded.
+            (r'lost.+?720p',
+                ['sendmail user@mail.com Hey, $torrent has been downloaded'],
+                ['unrar $torrent /extract/to/path']
+            ),
+            #Copy the the iso to another dir when ubuntu has been downloaded.
+            (r'ubuntu.?\.iso',
+                ['cp $torrent /other/dir']
+           )
+           ]
+
+
+#                                                                    #
+#-#-#-#-#-#-#-#-#-#-#-#-##-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
