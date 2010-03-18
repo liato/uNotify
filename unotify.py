@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import datetime
 import imp
-import json
 import os
 import re
 import socket
@@ -9,6 +8,14 @@ import subprocess
 import sys
 import time
 import urllib2
+
+try:
+    import json
+except ImportError:
+    try:
+        import simplejson as json
+    except ImportError:
+        print >> sys.stderr, 'Error: Could not import json or simplejson. Please install Python 2.6 or simplejson.'
 
 COMPLETED = {}
 SETTINGS = {}
