@@ -25,7 +25,7 @@ If you're a windows user and hate having a cluttered taskbar you can use
 `AppTrayer <http://codespeak.net/lxml/>`_ (or a similar app) to minimize
 uNotify to the system tray:
 
-    apptrayer.exe --icon=C:\path\to\uNotify\unotify.ico python X:\path\to\uNotify\unotify.py
+    apptrayer.exe --icon=C:\\path\\to\\uNotify\\unotify.ico python X:\\path\\to\\uNotify\\unotify.py
 
 
 If you're a linux or mac user you can simply use:
