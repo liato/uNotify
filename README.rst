@@ -16,7 +16,7 @@ Usage
 -----
 
 1. Install `µTorrent <http://www.utorrent.com/>`_ and enable the `WebUI <http://www.utorrent.com/documentation/webui>`_.
-2. Copy `config.py.example` to `config.py` and edit the file.
+2. Copy ``config.py.example`` to ``config.py`` and edit the file.
 3. Make sure you've entered the correct host and port and the same username and password as in uTorrent.
 4. Run the script.
 
