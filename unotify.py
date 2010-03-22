@@ -82,7 +82,7 @@ def getURLOpener(SETTINGS):
                 sys.exit(1)
                 
     authkey = re.sub('<[^>]+>', '', authkey.read()).strip()
-    log('Found new auth token (%s).' % authkey)
+    #log('Found new auth token (%s).' % authkey)
     opener.set_authkey(authkey)
     return opener
 
@@ -150,7 +150,7 @@ if __name__ == '__main__':
                             COMPLETED[t[0]] = t[2]
             except urllib2.HTTPError, e:
                 if e.code == 300:
-                    log('Auth token has changed. Requesting new token...')
+                    #log('Auth token has changed. Requesting new token...')
                     opener = getURLOpener(SETTINGS)
             except urllib2.URLError, e:
                 if e.reason.errno == 10061:
